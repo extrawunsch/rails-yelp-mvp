@@ -1,0 +1,22 @@
+<div class="container">
+<h1>Restaurants</h1>
+  <div class="row  justify-space-between">
+   <% @restaurants.each do |restaurant| %>
+    <div class="row justify-space-around mt-3 p-3">
+      
+      <div class="col-4"><%= link_to 'Show', restaurant %>
+        <div class="container-image" style="background-image: url('https://source.unsplash.com/random');"></div>
+        <div class='row justify-space-between'>
+          <div class="container">
+          <div class="header w-80"><%= restaurant.name %></div>
+          <div class="header w-80"><%= restaurant.address %></div>
+          <div class="header w-80"><%= 0 %></div>
+          </div>
+        </div>
+      </div>
+   </div>
+   <% end %>
+</div>
+<%= link_to 'Create new restaurant',  new_restaurant_path %>
+
+      

@@ -1,0 +1,17 @@
+<h1><%= @restaurant.name %></h1>
+
+<div class="container-image" style="background-image: url('https://source.unsplash.com/random');"></div>
+  <div class='row justify-space-between'>
+    <div class="container">
+    <div class="header w-80"><%= @restaurant.address %></div>
+  </div>
+</div>
+
+<h4>Our reviews:</h4>
+<%= link_to 'Add a review', new_restaurant_review_path(@restaurant) %>
+<hr>
+<% @restaurant.reviews.each do |review| %>
+  <p><%= review.content %></p>
+  <p><%= review.rating %></p>
+  <hr>
+<% end %>
